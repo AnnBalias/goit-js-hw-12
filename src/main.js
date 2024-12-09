@@ -56,6 +56,12 @@ function handSub(event) {
         galleryImg.refresh();
         loader.classList.add('visually-hidden');
         moreBtn.classList.add('visually-hidden');
+        setTimeout(() => {
+          iziToast.warning({
+            message:
+              "We're sorry, but you've reached the end of search results.",
+          });
+        }, 1500);
       }
       if (response.total > 15) {
         gallery.innerHTML = '';
@@ -94,6 +100,11 @@ async function handMore(event) {
       page === Math.ceil(nextPage.totalHits / 15)
     ) {
       moreBtn.classList.add('visually-hidden');
+      setTimeout(() => {
+        iziToast.warning({
+          message: "We're sorry, but you've reached the end of search results.",
+        });
+      }, 2000);
     }
 
     const item = document.querySelector('.gallery-item');
