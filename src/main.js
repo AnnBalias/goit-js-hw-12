@@ -27,7 +27,7 @@ moreBtn.addEventListener('click', handMore);
 function handSub(event) {
   event.preventDefault();
   inputValue = event.target.elements.input.value.trim();
-  page = 16;
+  page = 1;
 
   if (inputValue === '') {
     loader.classList.add('visually-hidden');
